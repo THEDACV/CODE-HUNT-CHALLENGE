@@ -1,0 +1,567 @@
+🏆 30 Code Hunt Challenge Snippets
+
+🔢 Basic Problems
+1️⃣ Reverse a String
+🔹 Clue: Swap characters from both ends of the string.
+
+
+C
+#include <stdio.h>
+#include <string.h>
+
+void reverseString(char str[]) {
+    int n = strlen(str);
+    for (int i = 0; i < n / 2; i++) {
+        // 🔥 Missing logic: Swap str[i] and str[n - i - 1]
+    }
+}
+
+int main() {
+    char str[] = "CodeHunt";
+    reverseString(str);
+    printf("%s\n", str); // Expected: "tnuHedoC"
+    return 0;
+}
+
+
+C++
+#include <iostream>
+using namespace std;
+
+void reverseString(string &str) {
+    int n = str.length();
+    for (int i = 0; i < n / 2; i++) {
+        // 🔥 Missing logic: Swap str[i] and str[n - i - 1]
+    }
+}
+
+int main() {
+    string str = "CodeHunt";
+    reverseString(str);
+    cout << str << endl; // Expected: "tnuHedoC"
+    return 0;
+}
+
+
+
+JAVA
+public class Main {
+    public static void reverseString(char[] str) {
+        int n = str.length;
+        for (int i = 0; i < n / 2; i++) {
+            // 🔥 Missing logic: Swap str[i] and str[n - i - 1]
+        }
+    }
+
+    public static void main(String[] args) {
+        char[] str = "CodeHunt".toCharArray();
+        reverseString(str);
+        System.out.println(new String(str)); // Expected: "tnuHedoC"
+    }
+}
+
+
+
+PYTHON
+def reverse_string(s):
+    s = list(s)
+    for i in range(len(s) // 2):
+        # 🔥 Missing logic: Swap s[i] and s[-i-1]
+    return "".join(s)
+
+print(reverse_string("CodeHunt"))  # Expected: "tnuHedoC"
+
+
+2️⃣ Check Prime Number
+🔹 Clue: A prime number has no divisors other than 1 and itself.
+
+C
+#include <stdio.h>
+
+int isPrime(int n) {
+    if (n < 2) return 0;
+    for (int i = 2; i * i <= n; i++) {
+        // 🔥 Missing logic: If n is divisible by i, return false
+    }
+    return 1;
+}
+
+int main() {
+    printf("%d\n", isPrime(19)); // Expected: 1 (True)
+    return 0;
+}
+
+
+C++
+#include <iostream>
+using namespace std;
+
+bool isPrime(int n) {
+    if (n < 2) return false;
+    for (int i = 2; i * i <= n; i++) {
+        // 🔥 Missing logic: If n is divisible by i, return false
+    }
+    return true;
+}
+
+int main() {
+    cout << isPrime(19) << endl; // Expected: 1 (True)
+    return 0;
+}
+
+
+JAVA
+class Main {
+    static boolean isPrime(int n) {
+        if (n < 2) return false;
+        for (int i = 2; i * i <= n; i++) {
+            // 🔥 Missing logic: If n is divisible by i, return false
+        }
+        return true;
+    }
+    
+    public static void main(String[] args) {
+        System.out.println(isPrime(19)); // Expected: true
+    }
+}
+
+
+
+PYTHON
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        # 🔥 Missing logic: If n is divisible by i, return False
+    return True
+
+print(is_prime(19))  # Expected: True
+
+
+3️⃣ Fibonacci Series
+🔹 Clue: Each number in the series is the sum of the previous two.
+
+C
+#include <stdio.h>
+
+void fibonacci(int n) {
+    int a = 0, b = 1, c;
+    for (int i = 0; i < n; i++) {
+        printf("%d ", a);
+        // 🔥 Missing logic: Update a and b
+    }
+}
+
+int main() {
+    fibonacci(10);
+    return 0;
+}
+
+
+C++
+#include <iostream>
+using namespace std;
+
+void fibonacci(int n) {
+    int a = 0, b = 1, c;
+    for (int i = 0; i < n; i++) {
+        cout << a << " ";
+        // 🔥 Missing logic: Update a and b
+    }
+}
+
+int main() {
+    fibonacci(10);
+    return 0;
+}
+
+
+JAVA
+class Main {
+    static void fibonacci(int n) {
+        int a = 0, b = 1, c;
+        for (int i = 0; i < n; i++) {
+            System.out.print(a + " ");
+            // 🔥 Missing logic: Update a and b
+        }
+    }
+
+    public static void main(String[] args) {
+        fibonacci(10);
+    }
+}
+
+
+PYTHON
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        print(a, end=" ")
+        # 🔥 Missing logic: Update a and b
+
+fibonacci(10)
+
+
+4️⃣ Palindrome Check
+🔹 Clue: A word is a palindrome if it reads the same forward and backward.
+
+C 
+#include <stdio.h>
+#include <string.h>
+
+int isPalindrome(char str[]) {
+    int len = strlen(str);
+    for (int i = 0; i < len / 2; i++) {
+        // 🔥 Missing logic: Compare str[i] and str[len - i - 1]
+    }
+    return 1;
+}
+
+int main() {
+    printf("%d\n", isPalindrome("racecar")); // Expected: 1 (True)
+    return 0;
+}
+
+
+C++
+#include <iostream>
+using namespace std;
+
+bool isPalindrome(string str) {
+    for (int i = 0; i < str.length() / 2; i++) {
+        // 🔥 Missing logic: Compare str[i] and str[str.length() - i - 1]
+    }
+    return true;
+}
+
+int main() {
+    cout << isPalindrome("racecar") << endl; // Expected: 1 (True)
+    return 0;
+}
+
+
+JAVA
+class Main {
+    static boolean isPalindrome(String str) {
+        for (int i = 0; i < str.length() / 2; i++) {
+            // 🔥 Missing logic: Compare str.charAt(i) and str.charAt(str.length() - i - 1)
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isPalindrome("racecar")); // Expected: true
+    }
+}
+
+
+PYTHON
+def is_palindrome(s):
+    for i in range(len(s) // 2):
+        # 🔥 Missing logic: Compare s[i] and s[-i-1]
+    return True
+
+print(is_palindrome("racecar"))  # Expected: True
+
+
+5️⃣ Factorial of a Number
+🔹 Clue: The factorial of n is n * (n-1) * (n-2) * ... * 1.
+
+c
+#include <stdio.h>
+
+int factorial(int n) {
+    // 🔥 Missing logic: Use recursion or loop to compute factorial
+}
+
+int main() {
+    printf("%d\n", factorial(5)); // Expected: 120
+    return 0;
+}
+
+
+C++
+#include <iostream>
+using namespace std;
+
+int factorial(int n) {
+    // 🔥 Missing logic: Use recursion or loop to compute factorial
+}
+
+int main() {
+    cout << factorial(5) << endl; // Expected: 120
+    return 0;
+}
+
+
+JAVA
+class Main {
+    static int factorial(int n) {
+        // 🔥 Missing logic: Use recursion or loop to compute factorial
+    }
+
+    public static void main(String[] args) {
+        System.out.println(factorial(5)); // Expected: 120
+    }
+}
+
+
+PYTHON
+def factorial(n):
+    # 🔥 Missing logic: Use recursion or loop to compute factorial
+
+print(factorial(5))  # Expected: 120
+
+
+6️⃣ Find the Largest Element in an Array
+🔹 Clue: Iterate through the array and keep track of the maximum element.
+
+c
+#include <stdio.h>
+
+int findMax(int arr[], int size) {
+    // 🔥 Missing logic: Traverse array and track max value
+}
+
+int main() {
+    int arr[] = {1, 5, 8, 12, 7};
+    printf("%d\n", findMax(arr, 5)); // Expected: 12
+    return 0;
+}
+
+
+C++
+#include <iostream>
+using namespace std;
+
+int findMax(int arr[], int size) {
+    // 🔥 Missing logic: Traverse array and track max value
+}
+
+int main() {
+    int arr[] = {1, 5, 8, 12, 7};
+    cout << findMax(arr, 5) << endl; // Expected: 12
+    return 0;
+}
+
+
+JAVA
+class Main {
+    static int findMax(int[] arr) {
+        // 🔥 Missing logic: Traverse array and track max value
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 5, 8, 12, 7};
+        System.out.println(findMax(arr)); // Expected: 12
+    }
+}
+
+
+PYTHON
+def find_max(arr):
+    # 🔥 Missing logic: Traverse array and track max value
+
+print(find_max([1, 5, 8, 12, 7]))  # Expected: 12
+
+
+7️⃣ Find the Smallest Element in an Array
+🔹 Clue: Iterate through the array and keep track of the smallest element.
+
+c
+#include <stdio.h>
+
+int findMin(int arr[], int size) {
+    // 🔥 Missing logic: Traverse array and track min value
+}
+
+int main() {
+    int arr[] = {3, 7, 2, 9, 1};
+    printf("%d\n", findMin(arr, 5)); // Expected: 1
+    return 0;
+}
+
+
+C++
+#include <iostream>
+using namespace std;
+
+int findMin(int arr[], int size) {
+    // 🔥 Missing logic: Traverse array and track min value
+}
+
+int main() {
+    int arr[] = {3, 7, 2, 9, 1};
+    cout << findMin(arr, 5) << endl; // Expected: 1
+    return 0;
+}
+
+
+JAVA
+class Main {
+    static int findMin(int[] arr) {
+        // 🔥 Missing logic: Traverse array and track min value
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {3, 7, 2, 9, 1};
+        System.out.println(findMin(arr)); // Expected: 1
+    }
+}
+
+
+PYTHON
+def find_min(arr):
+    # 🔥 Missing logic: Traverse array and track min value
+
+print(find_min([3, 7, 2, 9, 1]))  # Expected: 1
+
+
+8️⃣ Sum of Digits
+🔹 Clue: Extract each digit and sum them.
+
+c
+#include <stdio.h>
+
+int sumOfDigits(int n) {
+    // 🔥 Missing logic: Extract digits and sum them
+}
+
+int main() {
+    printf("%d\n", sumOfDigits(1234)); // Expected: 10
+    return 0;
+}
+
+
+C++
+#include <iostream>
+using namespace std;
+
+int sumOfDigits(int n) {
+    // 🔥 Missing logic: Extract digits and sum them
+}
+
+int main() {
+    cout << sumOfDigits(1234) << endl; // Expected: 10
+    return 0;
+}
+
+
+JAVA
+class Main {
+    static int sumOfDigits(int n) {
+        // 🔥 Missing logic: Extract digits and sum them
+    }
+
+    public static void main(String[] args) {
+        System.out.println(sumOfDigits(1234)); // Expected: 10
+    }
+}
+
+
+PYTHON
+def sum_of_digits(n):
+    # 🔥 Missing logic: Extract digits and sum them
+
+print(sum_of_digits(1234))  # Expected: 10
+
+
+
+9️⃣ Count the Number of Vowels in a String
+🔹 Clue: Check for 'a', 'e', 'i', 'o', 'u' (case insensitive).
+
+c
+#include <stdio.h>
+#include <string.h>
+
+int countVowels(char str[]) {
+    // 🔥 Missing logic: Check if each character is a vowel
+}
+
+int main() {
+    printf("%d\n", countVowels("Hello World")); // Expected: 3
+    return 0;
+}
+
+
+C++
+#include <iostream>
+using namespace std;
+
+int countVowels(string str) {
+    // 🔥 Missing logic: Check if each character is a vowel
+}
+
+int main() {
+    cout << countVowels("Hello World") << endl; // Expected: 3
+    return 0;
+}
+
+
+JAVA
+class Main {
+    static int countVowels(String str) {
+        // 🔥 Missing logic: Check if each character is a vowel
+    }
+
+    public static void main(String[] args) {
+        System.out.println(countVowels("Hello World")); // Expected: 3
+    }
+}
+
+
+PYTHON
+def count_vowels(s):
+    # 🔥 Missing logic: Check if each character is a vowel
+
+print(count_vowels("Hello World"))  # Expected: 3
+
+
+🔟 Find the GCD (Greatest Common Divisor)
+🔹 Clue: Use the Euclidean algorithm: gcd(a, b) = gcd(b, a % b).
+
+C
+#include <stdio.h>
+
+int gcd(int a, int b) {
+    // 🔥 Missing logic: Use recursion or loop with the Euclidean algorithm
+}
+
+int main() {
+    printf("%d\n", gcd(48, 18)); // Expected: 6
+    return 0;
+}
+
+
+C++
+#include <iostream>
+using namespace std;
+
+int gcd(int a, int b) {
+    // 🔥 Missing logic: Use recursion or loop with the Euclidean algorithm
+}
+
+int main() {
+    cout << gcd(48, 18) << endl; // Expected: 6
+    return 0;
+}
+
+
+JAVA
+class Main {
+    static int gcd(int a, int b) {
+        // 🔥 Missing logic: Use recursion or loop with the Euclidean algorithm
+    }
+
+    public static void main(String[] args) {
+        System.out.println(gcd(48, 18)); // Expected: 6
+    }
+}
+
+
+PYTHON
+def gcd(a, b):
+    # 🔥 Missing logic: Use recursion or loop with the Euclidean algorithm
+
+print(gcd(48, 18))  # Expected: 6
+

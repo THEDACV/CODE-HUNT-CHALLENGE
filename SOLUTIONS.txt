@@ -1,0 +1,457 @@
+Awesome! 🚀 Now, here are the **solutions** for the **missing logic** in the **10 Code Hunt Challenge snippets** across **C, C++, Java, and Python**.
+
+---
+
+# **🏆 Solutions for Code Hunt Challenge**
+
+---
+
+## **1️⃣ Reverse a String**
+🔹 **Logic:** Swap characters from both ends of the string.  
+🔹 **Solution:**  
+#### **C**
+```c
+void reverseString(char str[]) {
+    int n = strlen(str);
+    for (int i = 0; i < n / 2; i++) {
+        char temp = str[i];
+        str[i] = str[n - i - 1];
+        str[n - i - 1] = temp;
+    }
+}
+```
+#### **C++**
+```cpp
+void reverseString(string &str) {
+    int n = str.length();
+    for (int i = 0; i < n / 2; i++) {
+        swap(str[i], str[n - i - 1]);
+    }
+}
+```
+#### **Java**
+```java
+public static void reverseString(char[] str) {
+    int n = str.length;
+    for (int i = 0; i < n / 2; i++) {
+        char temp = str[i];
+        str[i] = str[n - i - 1];
+        str[n - i - 1] = temp;
+    }
+}
+```
+#### **Python**
+```python
+def reverse_string(s):
+    s = list(s)
+    for i in range(len(s) // 2):
+        s[i], s[-i-1] = s[-i-1], s[i]
+    return "".join(s)
+```
+
+---
+
+## **2️⃣ Check Prime Number**
+🔹 **Logic:** A number is prime if it has no divisors other than 1 and itself.  
+🔹 **Solution:**  
+#### **C**
+```c
+int isPrime(int n) {
+    if (n < 2) return 0;
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) return 0;
+    }
+    return 1;
+}
+```
+#### **C++**
+```cpp
+bool isPrime(int n) {
+    if (n < 2) return false;
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+```
+#### **Java**
+```java
+static boolean isPrime(int n) {
+    if (n < 2) return false;
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+```
+#### **Python**
+```python
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+```
+
+---
+
+## **3️⃣ Fibonacci Series**
+🔹 **Logic:** Each number in the series is the sum of the previous two.  
+🔹 **Solution:**  
+#### **C**
+```c
+void fibonacci(int n) {
+    int a = 0, b = 1, c;
+    for (int i = 0; i < n; i++) {
+        printf("%d ", a);
+        c = a + b;
+        a = b;
+        b = c;
+    }
+}
+```
+#### **C++**
+```cpp
+void fibonacci(int n) {
+    int a = 0, b = 1, c;
+    for (int i = 0; i < n; i++) {
+        cout << a << " ";
+        c = a + b;
+        a = b;
+        b = c;
+    }
+}
+```
+#### **Java**
+```java
+static void fibonacci(int n) {
+    int a = 0, b = 1, c;
+    for (int i = 0; i < n; i++) {
+        System.out.print(a + " ");
+        c = a + b;
+        a = b;
+        b = c;
+    }
+}
+```
+#### **Python**
+```python
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        print(a, end=" ")
+        a, b = b, a + b
+```
+
+---
+
+## **4️⃣ Palindrome Check**
+🔹 **Logic:** Compare characters from both ends.  
+🔹 **Solution:**  
+#### **C**
+```c
+int isPalindrome(char str[]) {
+    int len = strlen(str);
+    for (int i = 0; i < len / 2; i++) {
+        if (str[i] != str[len - i - 1]) return 0;
+    }
+    return 1;
+}
+```
+#### **C++**
+```cpp
+bool isPalindrome(string str) {
+    for (int i = 0; i < str.length() / 2; i++) {
+        if (str[i] != str[str.length() - i - 1]) return false;
+    }
+    return true;
+}
+```
+#### **Java**
+```java
+static boolean isPalindrome(String str) {
+    for (int i = 0; i < str.length() / 2; i++) {
+        if (str.charAt(i) != str.charAt(str.length() - i - 1)) return false;
+    }
+    return true;
+}
+```
+#### **Python**
+```python
+def is_palindrome(s):
+    return s == s[::-1]
+```
+
+---
+
+## **5️⃣ Factorial of a Number**
+🔹 **Logic:** Multiply all numbers from `n` to `1`.  
+🔹 **Solution:**  
+#### **C**
+```c
+int factorial(int n) {
+    return (n == 0) ? 1 : n * factorial(n - 1);
+}
+```
+#### **C++**
+```cpp
+int factorial(int n) {
+    return (n == 0) ? 1 : n * factorial(n - 1);
+}
+```
+#### **Java**
+```java
+static int factorial(int n) {
+    return (n == 0) ? 1 : n * factorial(n - 1);
+}
+```
+#### **Python**
+```python
+def factorial(n):
+    return 1 if n == 0 else n * factorial(n - 1)
+```
+
+---
+Great! 🚀 Here are the **remaining solutions** for the Code Hunt Challenge snippets.
+
+---
+
+# **🏆 Solutions for Code Hunt Challenge (Part 2)**
+
+---
+
+## **6️⃣ Find the Largest Element in an Array**
+🔹 **Logic:** Traverse the array and track the maximum value.  
+🔹 **Solution:**  
+#### **C**
+```c
+int findMax(int arr[], int size) {
+    int max = arr[0];
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+```
+#### **C++**
+```cpp
+int findMax(int arr[], int size) {
+    int max = arr[0];
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+```
+#### **Java**
+```java
+static int findMax(int[] arr) {
+    int max = arr[0];
+    for (int i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+```
+#### **Python**
+```python
+def find_max(arr):
+    return max(arr)
+```
+
+---
+
+## **7️⃣ Find the Smallest Element in an Array**
+🔹 **Logic:** Traverse the array and track the minimum value.  
+🔹 **Solution:**  
+#### **C**
+```c
+int findMin(int arr[], int size) {
+    int min = arr[0];
+    for (int i = 1; i < size; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+    return min;
+}
+```
+#### **C++**
+```cpp
+int findMin(int arr[], int size) {
+    int min = arr[0];
+    for (int i = 1; i < size; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+    return min;
+}
+```
+#### **Java**
+```java
+static int findMin(int[] arr) {
+    int min = arr[0];
+    for (int i = 1; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+    return min;
+}
+```
+#### **Python**
+```python
+def find_min(arr):
+    return min(arr)
+```
+
+---
+
+## **8️⃣ Sum of Digits**
+🔹 **Logic:** Extract each digit and sum them.  
+🔹 **Solution:**  
+#### **C**
+```c
+int sumOfDigits(int n) {
+    int sum = 0;
+    while (n > 0) {
+        sum += n % 10;
+        n /= 10;
+    }
+    return sum;
+}
+```
+#### **C++**
+```cpp
+int sumOfDigits(int n) {
+    int sum = 0;
+    while (n > 0) {
+        sum += n % 10;
+        n /= 10;
+    }
+    return sum;
+}
+```
+#### **Java**
+```java
+static int sumOfDigits(int n) {
+    int sum = 0;
+    while (n > 0) {
+        sum += n % 10;
+        n /= 10;
+    }
+    return sum;
+}
+```
+#### **Python**
+```python
+def sum_of_digits(n):
+    return sum(int(digit) for digit in str(n))
+```
+
+---
+
+## **9️⃣ Count the Number of Vowels in a String**
+🔹 **Logic:** Check for 'a', 'e', 'i', 'o', 'u' (case insensitive).  
+🔹 **Solution:**  
+#### **C**
+```c
+int countVowels(char str[]) {
+    int count = 0;
+    for (int i = 0; str[i] != '\0'; i++) {
+        char ch = tolower(str[i]);
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+            count++;
+        }
+    }
+    return count;
+}
+```
+#### **C++**
+```cpp
+int countVowels(string str) {
+    int count = 0;
+    for (char ch : str) {
+        ch = tolower(ch);
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+            count++;
+        }
+    }
+    return count;
+}
+```
+#### **Java**
+```java
+static int countVowels(String str) {
+    int count = 0;
+    for (char ch : str.toLowerCase().toCharArray()) {
+        if ("aeiou".indexOf(ch) != -1) {
+            count++;
+        }
+    }
+    return count;
+}
+```
+#### **Python**
+```python
+def count_vowels(s):
+    return sum(1 for ch in s.lower() if ch in "aeiou")
+```
+
+---
+
+## **🔟 Find the GCD (Greatest Common Divisor)**
+🔹 **Logic:** Use the Euclidean algorithm: `gcd(a, b) = gcd(b, a % b)`.  
+🔹 **Solution:**  
+#### **C**
+```c
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+```
+#### **C++**
+```cpp
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+```
+#### **Java**
+```java
+static int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+```
+#### **Python**
+```python
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+```
+
+---
+ 
